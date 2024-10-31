@@ -8,11 +8,11 @@ file(GLOB test_src
 
 # List out all module/class/function files which UnitTest has been written
 file(GLOB testing_src
-  "../src/util/*.cpp"
+  "../src/**/*.cpp"
 )
 
 # Include them so can access their header files
-include_directories(../src/util)
+include_directories(../src/util/ ../src/Stack/)
 
 # Define these module/class/function as a library so it can be linked togather with Test target Ex:- hello_test
 add_library(testing_lib ${testing_src})

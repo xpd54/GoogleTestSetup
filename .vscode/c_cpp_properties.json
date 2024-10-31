@@ -3,8 +3,7 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**",
-                "${workspaceFolder}/googletest/googletest/include/gtest"
+                "${workspaceFolder}/**"
             ],
             "defines": [],
             "macFrameworkPath": [

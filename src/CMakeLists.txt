@@ -5,6 +5,6 @@
 project(Demo)
 file(GLOB project_src
   "*.cpp"
-  "util/*.cpp"
+  "**/*.cpp"
 )
 add_executable(${PROJECT_NAME} ${project_src})
