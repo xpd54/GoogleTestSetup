@@ -13,7 +13,12 @@ file(GLOB testing_src
 )
 
 # Include them so can access their header files
-include_directories(../src/util ../src/Stack ../src/Turtle)
+include_directories(
+  ../src/util 
+  ../src/Stack 
+  ../src/Turtle 
+  ../src/Painter
+  )
 
 # Define these module/class/function as a library so it can be linked togather with Test target Ex:- hello_test
 add_library(testing_lib ${testing_src})

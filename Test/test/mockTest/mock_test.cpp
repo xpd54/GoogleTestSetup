@@ -1,15 +1,11 @@
-#include "Turtle.h"
-#include <gmock/gmock.h> // Brings in gMock.
+#include "Painter.h"
+#include "mock_tertle.h"
 #include <gtest/gtest.h>
-
-class MockTurtle : public Turtle {
-public:
-  MOCK_METHOD(void, PenUp, (), (override));
-  MOCK_METHOD(void, PenDown, (), (override));
-  MOCK_METHOD(void, Forward, (int distance), (override));
-  MOCK_METHOD(void, Turn, (int degrees), (override));
-  MOCK_METHOD(void, GoTo, (int x, int y), (override));
-  MOCK_METHOD(int, GetX, (), (const, override));
-  MOCK_METHOD(int, GetY, (), (const, override));
-};
-TEST(Hello, test) { EXPECT_TRUE(true); }
+using ::testing::AtLeast;
+TEST(PainterTest, CanDrawSomething) {
+  MockTurtle turtle;             // #2
+  EXPECT_CALL(turtle, PenDown()) // #3
+      .Times(AtLeast(1));
+  Painter painter(&turtle);          // #4
+  EXPECT_TRUE(painter.DrawCircle()); // #5
+}
